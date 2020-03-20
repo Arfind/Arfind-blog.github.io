@@ -215,16 +215,16 @@
 <p>”木桶原理“</p>
 <p><strong>数据与代码分离</strong>：各种注入式攻击引发的问题——从漏洞成因上看问题</p>
 <p>以X S S为例，产生原因为 HTML Injection或JavaScript  Injectio</p>
-<p><img src="/.com//blog\source\_posts\安全笔记1\7Z1{2Q5I`ZEY(E_" alt>SA4LB$H.png)</p>
+<p><img src="/.com//blog\source\img\7Z1{2Q5I`ZEY(E_" alt>SA4LB$H.png)</p>
 <p>其中</p>
-<p><img src="/.com//blog\source\_posts\安全笔记1\002.png" alt></p>
+<p><img src="/.com//blog\source\img\002.png" alt></p>
 <p>为代码执行段，而$var是用户能够控制的变量，所以属于用户的数据片段</p>
 <p>若将用户数据片段当成程序片段来执行，则容易发生安全问题</p>
 <p>当$var的值为：</p>
-<p><img src="/.com//blog\source\_posts\安全笔记1\003.png" alt></p>
+<p><img src="/.com//blog\source\img\003.png" alt></p>
 <p> 则用户数据被注入到代码中</p>
 <p>解决方案：</p>
-<p><img src="/.com//blog\source\_posts\安全笔记1\004.png" alt></p>
+<p><img src="/.com//blog\source\img\004.png" alt></p>
 <p><strong>不可预测性原则</strong>——克服攻击方法的角度看问题</p>
 <p><strong>ASLR</strong>技术：缓冲区溢出时，无法改变Code，但可以使进程的栈基地址随机变化，让攻击这无法准确猜测内存地址，加大攻击难度。在<strong>ASLR</strong>控制下，一个程序每一次启动，其进程的栈基地址都会随机改变，对于攻击者，便是不可预测的。</p>
 <p>不可预测性实现需要应用到加密算法、随机数算法、hash算法</p>
@@ -233,17 +233,17 @@
 <p>判断同源：1.协议 2. post 同源   3. host(域名或 IP 地址，若是IP地址则看作一个根域名）4.子域名</p>
 <p>若是在网站a.com上运行代码：</p>
 <p><strong>例：</strong></p>
-<p><img src="/.com//blog\source\_posts\安全笔记1\005.png" alt></p>
+<p><img src="/.com//blog\source\img\005.png" alt></p>
 <p>加载了b.com中的b.js，但是b.js是运行在a.com页面中的，因此对于打开的页面来说，b.js的origin是a.com。</p>
 <p>浏览器中，<script>，<img>,<iframe>,<link>都可以跨域加载资源，而不受同源策略的限制。当这些标签带“src”属性加载时，其实就是对浏览器发起一次GET请求，通过src属性加载资源时，浏览器限制了js的权限，不能读、写返回的内容。</p>
 <p>跨域访问方案的安全基础就是信任js无法控制HTTP头，若是此信任基础被打破，则不再安全。</p>
-<p><img src="D:\blog\source\_posts\安全笔记1\跨域访问请求过程.jpg" alt="跨域访问"></p>
+<p><img src="D:\blog\source\img\跨域访问请求过程.jpg" alt="跨域访问"></p>
 <p>在浏览器内，DOM、cookie、XMLHttpRequest受同源策略限制，浏览器内的第三方插件也有各自的同源策略。</p>
 <p><strong><em>绕过同源策略</em></strong>,CSS漏洞为例：</p>
 <p><a href="http://www.a.com/test.html" target="_blank" rel="noopener">www.a.com/test.html</a>:</p>
-<p><img src="D:\blog\source\_posts\安全笔记1\006.png" alt=""></p>
+<p><img src="D:\blog\source\img\006.png" alt=""></p>
 <p><a href="http://www.b.com/test2.html" target="_blank" rel="noopener">www.b.com/test2.html</a>:</p>
-<p><img src="D:\blog\source\_posts\安全笔记1\007.png" alt=""></p>
+<p><img src="D:\blog\source\img\007.png" alt=""></p>
 <p>通过@import加载了<a href="http://www.a.com/test.html为css文件，渲染进入当前页面DOM，通过document.body.currenStyle.fontFamily访问了这段内容。问题发生在了浏览器的css" target="_blank" rel="noopener">http://www.a.com/test.html为css文件，渲染进入当前页面DOM，通过document.body.currenStyle.fontFamily访问了这段内容。问题发生在了浏览器的css</a> page过程中，浏览器将fontFamily后面的内容当作value，则可以读取到<a href="http://www.a.com/test.html的页面内容。" target="_blank" rel="noopener">http://www.a.com/test.html的页面内容。</a></p>
 </script></p>
       
