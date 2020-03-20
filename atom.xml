@@ -37,26 +37,4 @@
     
   </entry>
   
-  <entry>
-    <title>hello-world</title>
-    <link href="http://yoursite.com/2020/03/04/hello-world/"/>
-    <id>http://yoursite.com/2020/03/04/hello-world/</id>
-    <published>2020-03-04T02:48:42.181Z</published>
-    <updated>2020-03-20T13:18:54.380Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to Arfind’s blog! </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to Arfind’s blog! &lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
