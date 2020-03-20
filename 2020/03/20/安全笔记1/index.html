@@ -94,7 +94,9 @@
       
 
       
-      <h1 id="title-安全笔记1"><a href="#title-安全笔记1" class="headerlink" title="title: 安全笔记1"></a>title: 安全笔记1</h1><p>date: 2020-03-20 21:37:22<br>tags:<br>安全学习笔记   day  1</p>
+      <h1 id="title-安全笔记1"><a href="#title-安全笔记1" class="headerlink" title="title: 安全笔记1"></a>title: 安全笔记1</h1><p>date: 2020-03-20 21:37:22</p>
+<p>photo:跨域访问请求过程.jpg</p>
+<p>tags:<br>安全学习笔记   day  1</p>
 <h2 id="安全五要素"><a href="#安全五要素" class="headerlink" title="安全五要素"></a>安全五要素</h2><p>机密性：数据内容不被泄露</p>
 <p>完整性：保护数据内容完整，不被篡改</p>
 <p>可用性：要求保护资源是”随需而得“</p>
@@ -198,21 +200,29 @@
 <p><strong>Defense in Depth</strong>(纵深防御）要在不同层面、不同方面实施安全方案，避免出现纰漏，不同的方案之间要相互配合，构成一个整体；要在正确的地方做正确的事情：在解决根本问题的地方实施针对性的安全方案</p>
 <p>”木桶原理“</p>
 <p><strong>数据与代码分离</strong>：各种注入式攻击引发的问题——从漏洞成因上看问题</p>
-<p>以X S S为例，产生原因为 HTML Injection或JavaScript  Injection</p>
-<html><br><br><head>text<meta name="generator" content="Hexo 4.2.0"></head><br><br><body><br>$var<br></body><br></html>
+<p>以X S S为例，产生原因为 HTML Injection或JavaScript  Injectio</p>
+<hr>
+<p><em><html></em></p>
+<head>text<meta name="generator" content="Hexo 4.2.0"></head>
 
+<p><em><body></em><br><em>$var</em><br><em></body></em><br><em></html></em></p>
 <p>其中</p>
 <html><br><br><head>text</head><br><br><body><br><br></body><br></html>
 
+<hr>
 <p>为代码执行段，而$var是用户能够控制的变量，所以属于用户的数据片段</p>
 <p>若将用户数据片段当成程序片段来执行，则容易发生安全问题</p>
 <p>当$var的值为：</p>
+<hr>
 <script src=http://****></script>
 
+<hr>
 <p> 则用户数据被注入到代码中</p>
 <p>解决方案：</p>
-<html><br><br><head>text</head><br><br><body><br><br><script><br>     alert(“$var”);<br></script><br><br></body><br></html>
+<hr>
+<html><br><br><head>text</head><br><br><body><br><br><script><br>     alert(“$var”);<br></script><br></body><br></html>
 
+<hr>
 <p>这样，<script>标签便成为了代码片段，用户数据只有$var能控制</p>
 <p><strong>不可预测性原则</strong>——克服攻击方法的角度看问题</p>
 <p><strong>ASLR</strong>技术：缓冲区溢出时，无法改变Code，但可以使进程的栈基地址随机变化，让攻击这无法准确猜测内存地址，加大攻击难度。在<strong>ASLR</strong>控制下，一个程序每一次启动，其进程的栈基地址都会随机改变，对于攻击者，便是不可预测的。</p>
@@ -326,20 +336,6 @@ alert(t);
 
   
   
-  <nav class="article-nav">
-    
-      <a href="/2020/03/20/%E5%AE%89%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20%20%20day%20%201/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            安全学习笔记   day  1
-          
-        </div>
-      </a>
-    
-    
-  </nav>
-
 
   
 
